@@ -28,7 +28,7 @@ export default function MyFooter({ locale = 'en' }) {
             <div className="hidden md:flex flex-col gap-4">
                 <div>
                     <p className="font-bold mb-2">{t('Contact Us')}</p>    
-                    <Link href="mailto:support@twitterxdownload.com" className="text-sm hover:text-primary mb-4">support@twitterxdownload.com</Link>
+                    <Link href="mailto:info@seo-meta.com" className="text-sm hover:text-primary mb-4">info@seo-meta.com</Link>
                     <a href="https://supadr.com?utm_source=twitterxdownload.com&utm_medium=badge&utm_campaign=supadr" target="_blank">
                         <img src="https://supadr.com/api/badge/twitterxdownload.com.svg?theme=blue" alt="Domain Rating for twitterxdownload.com" width="280" height="64" />
                     </a>
