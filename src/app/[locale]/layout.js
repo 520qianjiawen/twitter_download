@@ -20,13 +20,13 @@ export const metadata = {
   authors: [{ name: 'TwitterXDownload' }],
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   alternates: {
-    canonical: 'https://twitterxdownload.com/',
+    canonical: 'https://x.neutemu.com.com/',
   },
   openGraph: {
     title: 'TwitterXDownload - Free Twitter Video Downloader',
     description: 'Download Twitter videos and media content for free. No registration required.',
     type: 'website',
-    url: 'https://twitterxdownload.com',
+    url: 'https://x.neutemu.com.com',
     siteName: 'TwitterXDownload',
     images: [{
       url: 'https://twitterxdownload.com/images/og.png'

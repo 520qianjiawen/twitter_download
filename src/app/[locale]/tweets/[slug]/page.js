@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
         title: title,
         description: description,
         type: 'website',
-        url: 'https://twitterxdownload.com',
+        url: 'https://x.neutemu.com.com',
         siteName: 'TwitterXDownload',
         images: [{
           url: image
