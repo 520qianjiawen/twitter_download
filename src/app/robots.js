@@ -11,6 +11,6 @@ export default function robots() {
         ],
         crawlDelay: 1
       },
-      sitemap: 'https://x.neutemu.com.com/sitemap.xml',
+      sitemap: 'https://twitterxdownload.com/sitemap.xml',
     }
   }
