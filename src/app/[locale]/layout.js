@@ -12,8 +12,8 @@ import MyFooter from '../components/ui/MyFooter';
 
 export const metadata = {
   title: {
-    default: 'TwitterXDownload - Free Twitter Video Downloader',
-    template: '%s | TwitterXDownload'
+    default: 'Twitter Download - Free Twitter Video Downloader',
+    template: '%s | Twitter Download'
   },
   description: 'Download Twitter videos and media content for free. No registration required. Fast and easy Twitter video downloader. Twitter Media Saver. Twitter X Download.',
   keywords: 'twitter downloader, x video downloader, twitter video download, x.com downloader',
