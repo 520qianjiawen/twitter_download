@@ -19,7 +19,14 @@ export default function HotTweets({ locale = 'en' }) {
                 cache: 'no-store'
             });
             const tweetsData = await tweetsResp.json();
-            const totalCount = tweetsData.count;
+
+            if (!Array.isArray(tweetsData?.data)) {
+                console.error('Invalid tweetsData format:', tweetsData);
+                setIsLoading(false);
+                return;
+            }
+
+            const totalCount = tweetsData.count || 0;
             const tweets = [[], [], []];
             tweetsData.data.forEach((tweet, index) => {
                 tweets[index % 3].push({
@@ -27,6 +34,7 @@ export default function HotTweets({ locale = 'en' }) {
                     tweet_media: tweet.tweet_media ? tweet.tweet_media.split(',') : []
                 });
             });
+
             setTweets(tweets);
             setTotalCount(totalCount);
             setIsLoading(false);
