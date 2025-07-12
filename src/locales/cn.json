@@ -1,5 +1,5 @@
 {
-  "TwitterXDownload": "Twitter Download",
+  "TwitterXDownload": "TwitterXDownload",
   "The fastest and most reliable Twitter video downloader. Free to use, no registration required.": "最快速可靠的Twitter视频下载工具。免费使用，无需注册。",
   "Home": "首页",
   "About Us": "关于我们", 
@@ -63,7 +63,7 @@
   "Add Media": "添加媒体",
   "Insert": "插入",
   "Delete": "删除",
-  "Self Hosted": "全网热搜",
+  "Self Hosted": "自托管",
   "Exit": "退出",
   "Nothing to publish": "没有要发布的推文",
   "Will exceed the API limit of 17 tweets every 24 hours": "将超出每24小时17条推文的API限制",

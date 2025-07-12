@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="https://twitterxdownload.com/images/logo.png" alt="Twitter Video Download" width="80" height="80">
-  <h1>X Download</h1>
+  <img src="https://twitterxdownload.com/images/logo.png" alt="TwitterXDownload" width="80" height="80">
+  <h1>TwitterXDownload</h1>
 </div>
 
 
-Twitter Download is a powerful Twitter video downloader (not only video). And it's also a marketing tool that helps you republish the content efficiently. You can translate threads with one click. 
+TwitterXDownload is a powerful Twitter video downloader (not only video). And it's also a marketing tool that helps you republish the content efficiently. You can translate threads with one click. 
 
 So, its perfect for content creators, marketers.
 
@@ -72,7 +72,7 @@ curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 
 2. Access Coolify dashboard through your server IP:
 ```
-http://YOUR_SERVER_IP:3000
+http://YOUR_SERVER_IP:8000
 ```
 
 #### 2. Database Setup in Coolify
