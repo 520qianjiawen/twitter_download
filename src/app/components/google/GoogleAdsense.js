@@ -11,6 +11,14 @@ export default function GoogleAdsense() {
         crossOrigin="anonymous"
         strategy="afterInteractive"
       />
+      <Script id="adsbygoogle-init" strategy="afterInteractive">
+        {`
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}",
+            enable_page_level_ads: true
+          });
+        `}
+      </Script>
     </>
   );
 }
