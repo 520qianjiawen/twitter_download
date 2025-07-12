@@ -24,7 +24,7 @@ async function translate(text, targetLang){
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "cross-site"
                 },
-                referrer: "https://x.asg.li/",
+                referrer: "https://twitterxdownload.com/",
                 referrerPolicy: "strict-origin-when-cross-origin",
                 body: null,
                 mode: "cors",

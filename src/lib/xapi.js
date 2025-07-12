@@ -426,7 +426,7 @@ class XAPI {
 
     // when add video to tweet must waiting media processing;
     async _waitForMediaProcessing(mediaId) {
-        const url = `api/mediaupload.php?command=STATUS&media_id=${mediaId}`;
+        const url = `/api/x/mediaupload?command=STATUS&media_id=${mediaId}`;
         let processingInfo;
         do {
             const response = await fetch(url, {
@@ -465,7 +465,7 @@ class XAPI {
     }
 
     async uploadMedia(mediaSource) {
-        const url = 'api/x/mediaupload';
+        const url = '/api/x/mediaupload';
                 
         // 处理媒体源，可能是File对象、URL字符串或base64字符串
         let mediaFile;

@@ -1,5 +1,5 @@
 export const metadata = {
-  metadataBase: new URL('https://x.asg.li'),
+  metadataBase: new URL('https://twitterxdownload.com'),
 }
 
 export default function RootLayout({ children }) {
