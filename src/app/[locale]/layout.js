@@ -12,22 +12,22 @@ import MyFooter from '../components/ui/MyFooter';
 
 export const metadata = {
   title: {
-    default: 'TwitterXDownload - Free Twitter Video Downloader',
-    template: '%s | TwitterXDownload'
+    default: 'Twitter Download - Free Twitter Video Downloader',
+    template: '%s | Twitter Download'
   },
   description: 'Download Twitter videos and media content for free. No registration required. Fast and easy Twitter video downloader. Twitter Media Saver. Twitter X Download.',
   keywords: 'twitter downloader, x video downloader, twitter video download, x.com downloader',
   authors: [{ name: 'TwitterXDownload' }],
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   alternates: {
-    canonical: 'https://twitterxdownload.com/',
+    canonical: 'https://x.neutemu.com/',
   },
   openGraph: {
-    title: 'TwitterXDownload - Free Twitter Video Downloader',
+    title: 'Twitter Download - Free Twitter Video Downloader',
     description: 'Download Twitter videos and media content for free. No registration required.',
     type: 'website',
-    url: 'https://twitterxdownload.com',
-    siteName: 'TwitterXDownload',
+    url: 'https://x.neutemu.com',
+    siteName: 'Twitter Download',
     images: [{
       url: 'https://twitterxdownload.com/images/og.png'
     }]
