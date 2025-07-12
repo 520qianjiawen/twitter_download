@@ -13,7 +13,7 @@ export default function MyFooter({ locale = 'en' }) {
                     <Link href="https://github.com/" target="_blank"><Chip color="danger" size="sm" variant="flat" className="ml-2 -mt-1.5">v{process.env.APP_VERSION}</Chip></Link>
                 </div>
                 <p className="text-sm text-gray-500 mb-7">{t('The fastest and most reliable Twitter video downloader. Free to use, no registration required.')}</p>
-                <p className="text-sm text-gray-500">© 2024 <a href="https://x.asg.li" target="_blank">Twitter Download</a> {t('All rights reserved.')}</p>
+                <p className="text-sm text-gray-500">© 2024 <a href="https://x.neutemu.com" target="_blank">Twitter Download</a> {t('All rights reserved.')}</p>
             </div>
             <div className="flex flex-col gap-4">
                 <div>
