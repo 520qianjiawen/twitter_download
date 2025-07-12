@@ -27,8 +27,8 @@ const friendsLink = [
         icon: "#"
     },
     {
-        name: "Cloud ",
-        url: "#",
+        name: "SEO教程 ",
+        url: "https://seo-meta.com",
         icon: "#"
     }
 ]
