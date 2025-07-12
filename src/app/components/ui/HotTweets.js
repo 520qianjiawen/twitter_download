@@ -54,8 +54,23 @@ export default function HotTweets({ locale = 'en' }) {
             <div className="flex justify-between gap-5 flex-wrap md:flex-nowrap">
                 {tweets.map((row, index) => (
                     <div key={index} className="md:w-1/3 w-full flex flex-col gap-5">
-                        {row.map((tweet) => (
-                            <TweetCard locale={locale} key={tweet.tweet_id} tweet={tweet} />
+                        {row.map((tweet, i) => (
+                            <>
+                                <TweetCard locale={locale} key={tweet.tweet_id} tweet={tweet} />
+                                {i === 2 && (
+                                    <div className="my-4">
+                                        <ins className="adsbygoogle"
+                                             style={{ display: 'block' }}
+                                             data-ad-client="ca-pub-2719674832476577"
+                                             data-ad-slot="8054138819"
+                                             data-ad-format="auto"
+                                             data-full-width-responsive="true"></ins>
+                                        <script dangerouslySetInnerHTML={{
+                                            __html: `(adsbygoogle = window.adsbygoogle || []).push({});`
+                                        }} />
+                                    </div>
+                                )}
+                            </>
                         ))}
                     </div>
                 ))}
