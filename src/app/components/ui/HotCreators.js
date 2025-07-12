@@ -9,7 +9,7 @@ export default function HotCreators({ locale = 'en' }) {
     const t = function (key) {
         return getTranslation(locale, key);
     }
-    const [creatorsState, setCreatorsState] = useState([]);
+    const [creatorsState, setCreatorsState] = useState(creators);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -59,7 +59,7 @@ export default function HotCreators({ locale = 'en' }) {
     return (
         <>
             <ScrollShadow className="w-full flex gap-5" orientation="horizontal">
-                {Array.isArray(creatorsState) && creatorsState.length > 0 ? creatorsState.map((creator) => (
+                {creatorsState.map((creator) => (
                     <Card
                         shadow="none"
                         disableRipple
@@ -94,9 +94,7 @@ export default function HotCreators({ locale = 'en' }) {
                             </Button>
                         </CardFooter>
                     </Card>
-                )) : (
-                  <p className="text-default-400 px-2">暂无热门创作者</p>
-                )}
+                ))}
             </ScrollShadow>
         </>
     );
