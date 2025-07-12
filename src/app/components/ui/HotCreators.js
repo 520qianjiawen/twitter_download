@@ -1,61 +1,65 @@
-'use client'
+'use client';
+
+import { useEffect, useState } from 'react';
 import { Card, CardFooter, CardHeader, Button, Avatar, Skeleton,ScrollShadow } from "@heroui/react";
 import { getTranslation } from "@/lib/i18n";
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+let creators = [];
 
 export default function HotCreators({ locale = 'en' }) {
     const t = function (key) {
         return getTranslation(locale, key);
     }
-    
-    const [creators, setCreators] = useState([]);
+    const [creatorsState, setCreatorsState] = useState(creators);
     const [isLoading, setIsLoading] = useState(true);
-    
+
     useEffect(() => {
-        const fetchCreators = async () => {
-            const creatorsResp = await fetch(`/api/requestdb?action=creators`,{
-                cache: 'no-store'
-            });
-            const creatorsData = await creatorsResp.json();
-            setCreators(creatorsData.data||[]);
+        if (creators.length === 0) {
+            fetch('/api/requestdb?action=creators')
+                .then(response => response.json())
+                .then(data => {
+                    setCreatorsState(data.data);
+                    creators = data.data;
+                    setIsLoading(false);
+                })
+                .catch(error => {
+                    console.error('Error fetching tweets:', error);
+                    setIsLoading(false);
+                });
+        }else{
             setIsLoading(false);
         }
-        fetchCreators();
     }, []);
 
     if (isLoading) {
         return (
-            <ScrollShadow className="w-full flex gap-5" orientation="horizontal">
-                {Array.from({ length: 6 }).map((_, index) => (
+            <div className="flex justify-between gap-5 overflow-x-auto pr-6">
+                {[1,2,3,4,5,6].map((index) => (
                     <Card
-                    shadow="none"
-                    disableRipple
-                    className="select-none box-border border-foreground/10 border-[1px] min-w-[200px] max-w-[20%] p-2 flex-shrink-0"
-                    radius="lg"
-                    key={index}
-                >
-                    <CardHeader className="justify-between gap-5">
-                        <Skeleton className="rounded-full w-10 h-10" />
-                        <div className="flex flex-col gap-1 items-start justify-center overflow-hidden flex-1">
-                            <Skeleton className="w-full h-4" />
-                            <Skeleton className="w-full h-3" />
-                        </div>
-                    </CardHeader>
-                    <CardFooter className="justify-between before:bg-white/10 overflow-hidden w-[calc(100%_-_8px)]">
-                        
-                            <Skeleton className="w-[100px] h-8" />
-                    </CardFooter>
-                </Card>
+                        shadow="none"
+                        className="select-none box-border border-foreground/10 border-[1px] min-w-[160px] max-w-[20%] p-2 flex-shrink-0"
+                        radius="lg"
+                        key={`skeleton-${index}`}
+                    >
+                        <CardHeader className="justify-between gap-5">
+                            <Skeleton className="rounded-full w-10 h-10" />
+                            <div className="flex flex-col gap-1 items-start justify-center overflow-hidden flex-1">
+                                <Skeleton className="h-3 w-24" />
+                                <Skeleton className="h-3 w-16" />
+                            </div>
+                        </CardHeader>
+                        <CardFooter className="justify-between before:bg-white/10 overflow-hidden w-[calc(100%_-_8px)]">
+                            <Skeleton className="h-6 w-[100px] rounded-full m-auto" />
+                        </CardFooter>
+                    </Card>
                 ))}
-            </ScrollShadow>
+            </div>
         );
     }
 
     return (
         <>
             <ScrollShadow className="w-full flex gap-5" orientation="horizontal">
-                {creators.map((creator) => (
+                {creatorsState.map((creator) => (
                     <Card
                         shadow="none"
                         disableRipple
@@ -65,10 +69,10 @@ export default function HotCreators({ locale = 'en' }) {
                     >
                         <CardHeader className="justify-between gap-5">
                             <Avatar
+                                disableAnimation={true}
                                 isBordered
                                 radius="full"
                                 size="md"
-                                alt={`${creator.name} avatar`}
                                 src={creator.profile_image}
                             />
                             <div className="flex flex-col gap-1 items-start justify-center overflow-hidden flex-1">
@@ -77,17 +81,17 @@ export default function HotCreators({ locale = 'en' }) {
                             </div>
                         </CardHeader>
                         <CardFooter className="justify-between before:bg-white/10 overflow-hidden w-[calc(100%_-_8px)]">
-                            
-                                <Button
-                                    className="text-tiny text-white m-auto w-[100px]"
-                                    color="primary"
-                                    radius="full"
-                                    size="sm"
-                                    as={Link}
-                                    href={`/tweets?screen_name=${creator.screen_name}`}
-                                >
-                                    {t('Search')}
-                                </Button>
+                            <Button
+                                className="text-tiny text-white m-auto w-[100px]"
+                                color="primary"
+                                radius="full"
+                                size="sm"
+                                onPress={() => {
+                                    window.open(`https://x.com/intent/follow?screen_name=${creator.screen_name}`, '_blank');
+                                }}
+                            >
+                                {t('Follow')}
+                            </Button>
                         </CardFooter>
                     </Card>
                 ))}

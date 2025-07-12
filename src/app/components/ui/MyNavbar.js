@@ -22,25 +22,25 @@ export default function MyNavbar({ locale = 'en' }) {
     }}>
       <NavbarBrand>
         <Link href="/" className="text-foreground">
-          <Image src="/images/logo.png" alt="TwitterXDownload" width={32} height={32} />
+          <Image src="/images/logo.png" alt="Twitter Download" width={32} height={32} />
           <p className="font-bold text-inherit mx-3 text-2xl">
-            {t('TwitterXDownload')}
+            {t('Twitter Download')}
           </p>
         </Link>
       </NavbarBrand>
-      <NavbarContent className="hidden md:flex gap-6" justify="center">
-        {process.env.NEXT_PUBLIC_SEARCH_ENABLED != 0 && <NavbarItem>
+      <NavbarContent className="hidden sm:flex gap-6" justify="center">
+        <NavbarItem>
           <Link color="foreground" href="/tweets">
           {t('Search Tweets')}
           </Link>
-        </NavbarItem>}
+        </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/downloader">
           {t('Downloader')}
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="https://github.com/ezshine/twitterxdownload" target="_blank">
+          <Link color="foreground" href="https://news.asg.li/" target="_blank">
           {t('Self Hosted')}
           </Link>
         </NavbarItem>
@@ -49,7 +49,7 @@ export default function MyNavbar({ locale = 'en' }) {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden md:flex">
+        <NavbarItem>
           <LanguageSwitcher locale={locale} />
         </NavbarItem>
         <NavbarItem>
