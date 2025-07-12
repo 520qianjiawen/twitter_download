@@ -1,5 +1,5 @@
 export const metadata = {
-  metadataBase: new URL('https://x.asg.li'),
+  metadataBase: new URL('https://x.neutemu.com'),
 }
 
 export default function RootLayout({ children }) {

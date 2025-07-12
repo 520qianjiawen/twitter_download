@@ -17,12 +17,12 @@ export const metadata = {
   keywords: 'twitter downloader, x video downloader, twitter video download, x.com downloader',
   authors: [{ name: 'Twitter Download' }],
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
-  canonical: 'https://x.asg.li/',
+  canonical: 'https://x.neutemu.com.li/',
   openGraph: {
     title: 'Twitter Download - Free Twitter Video Downloader',
     description: 'Download Twitter videos and media content for free. No registration required.',
     type: 'website',
-    url: 'https://x.asg.li',
+    url: 'https://x.neutemu.com',
     siteName: 'Twitter Download',
     images: [{
       url: 'https://twitterxdownload.com/images/og.png'

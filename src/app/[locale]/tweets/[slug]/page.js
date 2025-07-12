@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
         title: title,
         description: description,
         type: 'website',
-        url: 'https://x.asg.li',
+        url: 'https://x.neutemu.com',
         siteName: 'Twitter Download',
         images: [{
           url: image
