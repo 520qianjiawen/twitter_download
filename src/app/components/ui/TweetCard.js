@@ -17,19 +17,44 @@ export default function TweetCard({ tweet,videoPreview=true,enableEdit = false,l
 
     const getMediaDom = (mediaUrl) => {
         // Wrap each media element in a container that includes a download button.
+        const downloadMedia = async (e) => {
+            // Prevent the click from triggering navigation on the card itself.
+            e.stopPropagation();
+            try {
+                const response = await fetch(mediaUrl);
+                // Some servers may block cross‑origin fetches. If so, fall back to opening the media in a new tab.
+                if (!response.ok) {
+                    window.open(mediaUrl, '_blank');
+                    return;
+                }
+                const blob = await response.blob();
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                // Determine a filename from the URL or fall back to a timestamp.
+                const pathname = mediaUrl.split('?')[0];
+                const filename = pathname.split('/').pop() || `media_${Date.now()}`;
+                link.setAttribute('download', filename);
+                // iOS Safari requires the link to be in the document body.
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+            } catch (err) {
+                console.error('Media download failed:', err);
+                // If fetch fails (e.g. CORS), open the media in a new tab.
+                window.open(mediaUrl, '_blank');
+            }
+        };
+
         const render = (child) => (
             <div className="relative w-full h-full">
-                {/* individual download button; stop propagation so clicking doesn't trigger parent links */}
-                <a
-                    href={mediaUrl}
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                {/* individual download button; the onClick handler performs a manual download, which works on iOS when direct saving via the download attribute is unsupported */}
+                <button
+                    onClick={downloadMedia}
                     className="absolute z-20 bottom-2 right-2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1"
+                    aria-label={t('Download')}
                 >
                     <RiDownloadLine className="w-4 h-4" />
-                </a>
+                </button>
                 {child}
             </div>
         );

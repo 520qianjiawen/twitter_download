@@ -97,6 +97,19 @@ export async function GET(request) {
 
       allData = result[0].data;
       count = result[0].count[0]?.total || 0;
+
+      // Fallback: if no visible tweets were found locally and useSharedDB is disabled,
+      // try fetching from the shared API. This ensures the lists are populated
+      // when running without a local database.
+      if ((!allData || allData.length === 0) && process.env.NEXT_PUBLIC_USE_SHARED_DB !== '1') {
+        try {
+          const response = await fetch(`https://api.twitterxdownload.com/api/requestdb?action=recent`);
+          const data = await response.json();
+          return Response.json({ message: 'fallback to shared database', ...data });
+        } catch (err) {
+          // ignore fallback error
+        }
+      }
     } else if (action === 'all') {
       allData = await Tweets.find({ 
         ...baseFilter
@@ -177,6 +190,18 @@ export async function GET(request) {
         ]);
         count = creatorNames.length;
         setStorage('creators_count', count);
+      }
+
+      // Fallback: if no creators were found locally and useSharedDB is disabled,
+      // fetch from the shared API. This matches the logic for recent tweets.
+      if ((!allData || allData.length === 0) && process.env.NEXT_PUBLIC_USE_SHARED_DB !== '1') {
+        try {
+          const response = await fetch(`https://api.twitterxdownload.com/api/requestdb?action=creators&limit=${limit}`);
+          const data = await response.json();
+          return Response.json({ message: 'fallback to shared database', ...data });
+        } catch (err) {
+          // ignore fallback error
+        }
       }
     } else if (action === 'detail') {
         const tweet_id = searchParams.get('tweet_id');

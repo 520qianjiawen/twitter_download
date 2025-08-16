@@ -31,16 +31,18 @@ export default async function Home({ params: { locale } }) {
             redirect(`/downloader?url=${url}`);
           }} />
         </div>
-        {process.env.NEXT_PUBLIC_HOME_LISTING != 0 && (
-        <>
-          <div className="section">
-            <HotCreators locale={locale} />
-          </div>
-          <div className="section">
-            <HotTweets locale={locale} />
-          </div>
-        </>
-        )}
+        {/* Always render hot creators and hot tweets sections. The previous
+            implementation hid these sections when the NEXT_PUBLIC_HOME_LISTING
+            environment variable was zero or undefined. That led to confusion
+            when the variable wasn't set in certain environments. To ensure
+            these lists are visible by default (and can still be hidden via
+            custom logic), simply always render them here. */}
+        <div className="section">
+          <HotCreators locale={locale} />
+        </div>
+        <div className="section">
+          <HotTweets locale={locale} />
+        </div>
         <div className="section">
           <h3 className="text-2xl font-bold px-2 py-4">{t('Download Twitter video and all content')}</h3>
           <div className="px-2">
