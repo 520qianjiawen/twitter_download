@@ -57,32 +57,44 @@ export async function GET(request) {
     if (!action || action === 'recent') {
       const cachedData = getStorage('recent_tweets');
       let result;
-      if(cachedData){
+      if (cachedData) {
         result = cachedData;
-      }else{
+      } else {
+        // When counting the total number of recent tweets, ensure we only count
+        // tweets that would also be shown in the list. Previously the count
+        // stage did not apply the same filter as the data stage, which
+        // resulted in counts that included hidden tweets. This led to a
+        // confusing situation where the homepage displayed a non‑zero count
+        // but no visible tweets. To avoid that, apply the same match
+        // conditions (including `is_hidden != 1`) to both the data and
+        // count facets.
         result = await Tweets.aggregate([
           {
             $facet: {
               data: [
-                { $match: { 
+                { $match: {
                   ...baseFilter,
                   is_hidden: { $ne: 1 }
                 } },
                 { $sort: { created_at: -1 } },
                 { $project: {
                   tweet_data: 0
-                }},
+                } },
                 { $limit: 15 }
               ],
               count: [
-                { $count: "total" }
+                { $match: {
+                  ...baseFilter,
+                  is_hidden: { $ne: 1 }
+                } },
+                { $count: 'total' }
               ]
             }
           }
         ]);
         setStorage('recent_tweets', result, 3600);
       }
-      
+
       allData = result[0].data;
       count = result[0].count[0]?.total || 0;
     } else if (action === 'all') {
@@ -150,10 +162,20 @@ export async function GET(request) {
       }
       
       const cachedCount = getStorage('creators_count');
-      if(cachedCount){
+      if (cachedCount) {
         count = cachedCount;
-      }else{
-        count = await Tweets.distinct('screen_name', baseFilter).then(names => names.length);
+      } else {
+        // Count only creators that have at least one visible tweet. Apply the
+        // same filters used for displaying creators, including `is_hidden != 1`.
+        // We first find all unique screen names that meet the criteria and
+        // count them. Without filtering on is_hidden here, the count could
+        // include creators whose tweets are entirely hidden, leading to
+        // discrepancies between the displayed list and the count.
+        const creatorNames = await Tweets.aggregate([
+          { $match: { ...baseFilter, is_hidden: { $ne: 1 } } },
+          { $group: { _id: '$screen_name' } }
+        ]);
+        count = creatorNames.length;
         setStorage('creators_count', count);
       }
     } else if (action === 'detail') {
