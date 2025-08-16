@@ -1,4 +1,5 @@
 export default async function sitemap() {
+    // Base URL for generating sitemap entries.  Updated to the new domain.
     const baseUrl = 'https://x.neutemu.com';
 
     // 获取最新推文用于 sitemap

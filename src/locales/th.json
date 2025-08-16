@@ -1,5 +1,5 @@
 {
-  "TwitterXDownload": "TwitterXDownload",
+  "TwitterXDownload": "Twitter Download",
   "The fastest and most reliable Twitter video downloader. Free to use, no registration required.": "ตัวดาวน์โหลดวิดีโอ Twitter ที่เร็วและน่าเชื่อถือที่สุด ใช้ฟรี ไม่ต้องลงทะเบียน",
   "Home": "หน้าแรก",
   "About Us": "เกี่ยวกับเรา",
@@ -11,7 +11,7 @@
   "Hot Tweets": "ทวีตยอดนิยม",
   "Load More": "โหลดเพิ่ม",
   "Download Twitter video and all content": "ดาวน์โหลดวิดีโอ Twitter และเนื้อหาทั้งหมด",
-  "TwitterXDownload is an online web app to download twitter videos and all content to your computer directly. Twitter videos and Twitter GIFs are embedded in the tweet, so to download twitter videos online, you need to copy the tweet URL/link and paste it in the above text box. Our Twitter X download service will extract the twitter to mp4 link from the tweet and you can save twitter videos to your computer.": "TwitterXDownload เป็นแอพเว็บออนไลน์สำหรับดาวน์โหลดวิดีโอ Twitter และเนื้อหาทั้งหมดลงคอมพิวเตอร์ของคุณโดยตรง วิดีโอและ GIF ของ Twitter ถูกฝังอยู่ในทวีต ดังนั้นเพื่อดาวน์โหลดวิดีโอ Twitter ออนไลน์ คุณต้องคัดลอก URL/ลิงก์ของทวีตและวางในกล่องข้อความด้านบน บริการดาวน์โหลด Twitter X ของเราจะดึงลิงก์ mp4 จากทวีตและคุณสามารถบันทึกวิดีโอ Twitter ลงในคอมพิวเตอร์ของคุณได้",
+  "TwitterXDownload is an online web app to download twitter videos and all content to your computer directly. Twitter videos and Twitter GIFs are embedded in the tweet, so to download twitter videos online, you need to copy the tweet URL/link and paste it in the above text box. Our Twitter X download service will extract the twitter to mp4 link from the tweet and you can save twitter videos to your computer.": "Twitter Download เป็นแอพเว็บออนไลน์สำหรับดาวน์โหลดวิดีโอ Twitter และเนื้อหาทั้งหมดลงคอมพิวเตอร์ของคุณโดยตรง วิดีโอและ GIF ของ Twitter ถูกฝังอยู่ในทวีต ดังนั้นเพื่อดาวน์โหลดวิดีโอ Twitter ออนไลน์ คุณต้องคัดลอก URL/ลิงก์ของทวีตและวางในกล่องข้อความด้านบน บริการดาวน์โหลด Twitter X ของเราจะดึงลิงก์ mp4 จากทวีตและคุณสามารถบันทึกวิดีโอ Twitter ลงในคอมพิวเตอร์ของคุณได้",
   "All the videos and images are loaded directly from twitter CDN.": "วิดีโอและรูปภาพทั้งหมดถูกโหลดโดยตรงจาก CDN ของ Twitter",
   "Frequently Asked Questions": "คำถามที่พบบ่อย",
   "Submit": "ส่ง",
@@ -85,5 +85,17 @@
   "Post At": "เผยแพร่เมื่อ",
   "Import API keys": "นำเข้าคีย์ API",
   "Export API keys": "ส่งออกคีย์ API",
-  "Invalid API keys": "คีย์ APIไม่ถูกต้อง"
+  "Invalid API keys": "คีย์ APIไม่ถูกต้อง",
+  "Invalid admin password": "รหัสผ่านผู้ดูแลระบบไม่ถูกต้อง",
+  "Tweet shown successfully": "แสดงทวีตสำเร็จ",
+  "This tweet will be shown on homepage": "ทวีตนี้จะแสดงบนหน้าแรก",
+  "Tweet hidden successfully": "ซ่อนทวีตสำเร็จ", 
+  "This tweet will be hidden on homepage": "ทวีตนี้จะถูกซ่อนจากหน้าแรก",
+  "Tweet deleted successfully": "ลบทวีตสำเร็จ",
+  "This tweet will be deleted from database": "ทวีตนี้จะถูกลบออกจากฐานข้อมูล",  
+  "Search results may contain adult content. You must be at least 18 years old to continue.": "ผลการค้นหาอาจมีเนื้อหาสำหรับผู้ใหญ่ คุณต้องมีอายุอย่างน้อย 18 ปีจึงจะดำเนินการต่อได้",
+  "Birth date": "วันเกิด",
+  "View All": "ดูทั้งหมด",
+  "Download All": "ดาวน์โหลดทั้งหมด",
+  "Goto Article": "ไปที่บทความ"
 } 

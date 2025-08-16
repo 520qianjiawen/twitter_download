@@ -1,10 +1,11 @@
 <div align="center">
-  <img src="https://twitterxdownload.com/images/logo.png" alt="Twitter Download免费下载" width="80" height="80">
-  <h1>Twitter Download免费下载</h1>
+  <!-- Use the new domain and branding in the README banner -->
+  <img src="https://x.neutemu.com/images/logo.png" alt="Twitter Download" width="80" height="80">
+  <h1>Twitter Download</h1>
 </div>
 
 
-Twitter Download is a powerful Twitter video downloader (not only video). And it's also a marketing tool that helps you republish the content efficiently. You can translate threads with one click. 
+Twitter Download (formerly TwitterXDownload) is a powerful Twitter video downloader (and much more).  It’s also a marketing tool that helps you republish content efficiently, with one‑click thread translation.
 
 So, its perfect for content creators, marketers.
 

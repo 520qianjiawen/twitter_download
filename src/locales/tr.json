@@ -1,5 +1,5 @@
 {
-  "TwitterXDownload": "TwitterXDownload",
+  "TwitterXDownload": "Twitter Download",
   "The fastest and most reliable Twitter video downloader. Free to use, no registration required.": "En hızlı ve en güvenilir Twitter video indirici. Ücretsiz kullanım, kayıt gerektirmez.",
   "Home": "Ana Sayfa",
   "About Us": "Hakkımızda",
@@ -11,7 +11,7 @@
   "Hot Tweets": "Popüler Tweetler",
   "Load More": "Daha Fazla Yükle",
   "Download Twitter video and all content": "Twitter videosu ve tüm içeriği indir",
-  "TwitterXDownload is an online web app to download twitter videos and all content to your computer directly. Twitter videos and Twitter GIFs are embedded in the tweet, so to download twitter videos online, you need to copy the tweet URL/link and paste it in the above text box. Our Twitter X download service will extract the twitter to mp4 link from the tweet and you can save twitter videos to your computer.": "TwitterXDownload, Twitter videolarını ve tüm içeriği doğrudan bilgisayarınıza indirmek için bir çevrimiçi web uygulamasıdır. Twitter videoları ve Twitter GIF'leri tweet içine gömülüdür, bu nedenle Twitter videolarını çevrimiçi indirmek için tweet URL'sini/bağlantısını kopyalayıp yukarıdaki metin kutusuna yapıştırmanız gerekir. Twitter X indirme hizmetimiz, tweet'ten mp4 bağlantısını çıkaracak ve Twitter videolarını bilgisayarınıza kaydedebileceksiniz.",
+  "TwitterXDownload is an online web app to download twitter videos and all content to your computer directly. Twitter videos and Twitter GIFs are embedded in the tweet, so to download twitter videos online, you need to copy the tweet URL/link and paste it in the above text box. Our Twitter X download service will extract the twitter to mp4 link from the tweet and you can save twitter videos to your computer.": "Twitter Download, Twitter videolarını ve tüm içeriği doğrudan bilgisayarınıza indirmek için bir çevrimiçi web uygulamasıdır. Twitter videoları ve Twitter GIF'leri tweet içine gömülüdür, bu nedenle Twitter videolarını çevrimiçi indirmek için tweet URL'sini/bağlantısını kopyalayıp yukarıdaki metin kutusuna yapıştırmanız gerekir. Twitter X indirme hizmetimiz, tweet'ten mp4 bağlantısını çıkaracak ve Twitter videolarını bilgisayarınıza kaydedebileceksiniz.",
   "All the videos and images are loaded directly from twitter CDN.": "Tüm videolar ve resimler doğrudan Twitter CDN'den yüklenir.",
   "Frequently Asked Questions": "Sıkça Sorulan Sorular",
   "Submit": "Gönder",
@@ -85,5 +85,17 @@
   "Post At": "Yayınlanma Tarihi",
   "Import API keys": "API anahtarlarını içe aktar",
   "Export API keys": "API anahtarlarını dışa aktar",
-  "Invalid API keys": "Geçersiz API anahtarları"
+  "Invalid API keys": "Geçersiz API anahtarları",
+  "Invalid admin password": "Geçersiz yönetici şifresi",
+  "Tweet shown successfully": "Tweet başarıyla gösterildi",
+  "This tweet will be shown on homepage": "Bu tweet ana sayfada gösterilecek",
+  "Tweet hidden successfully": "Tweet başarıyla gizlendi",
+  "This tweet will be hidden on homepage": "Bu tweet ana sayfada gizlenecek",
+  "Tweet deleted successfully": "Tweet başarıyla silindi",
+  "This tweet will be deleted from database": "Bu tweet veritabanından silinecek",  
+  "Search results may contain adult content. You must be at least 18 years old to continue.": "Arama sonuçları yetişkin içeriği içerebilir. Devam etmek için en az 18 yaşında olmalısınız.",
+  "Birth date": "Doğum Tarihi",
+  "View All": "Tümünü Gör",
+  "Download All": "Tümünü İndir",
+  "Goto Article": "Makaleye Git"
 } 

@@ -29,11 +29,20 @@ export async function generateMetadata({ params }) {
     const title = tweet_text.substring(0, 50);
     const description = tweet_text.substring(0, 150);
 
-    let image = "https://twitterxdownload.com/images/og.png";
+    // Fallback image used when no media is present in the tweet.  Point to
+    // the og.png on the new domain so link previews remain accurate.
+    let image = "https://x.neutemu.com/images/og.png";
     // 如果 tweet.tweet_media 存在,则使用 tweet.tweet_media 的第一个图片
     // 获取推文数据
     const data = JSON.parse(tweet.tweet_data);
-    const resultTweet = data.data.threaded_conversation_with_injections_v2.instructions[0].entries[0].content.itemContent.tweet_results.result;
+    let entries;
+    for (const instruction of data.data.threaded_conversation_with_injections_v2.instructions) {
+        if (instruction.entries) {
+            entries = instruction.entries;
+            break;
+        }
+    }
+    const resultTweet = entries[0].content.itemContent.tweet_results.result;
     // 获取主推文数据
     const first_tweet = resultTweet.legacy || resultTweet.tweet.legacy;
     if (first_tweet.extended_entities?.media) {
@@ -50,14 +59,18 @@ export async function generateMetadata({ params }) {
         title: title,
         description: description,
         type: 'website',
-        url: 'https://twitterxdownload.com',
-        siteName: 'TwitterXDownload',
+        // Use the new domain for tweet pages in OpenGraph metadata.
+        url: 'https://x.neutemu.com',
+        // Update the siteName to the new brand.
+        siteName: 'Twitter Download',
         images: [{
           url: image
         }]
       },
       twitter: {
         card: 'summary_large_image',
+        // The Twitter account handle remains the same.  Only update the
+        // siteName via openGraph above.
         site: '@twitterxdownload',
         title: title,
         description: description,

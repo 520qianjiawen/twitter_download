@@ -1,5 +1,5 @@
 {
-  "TwitterXDownload": "TwitterXDownload",
+  "TwitterXDownload": "Twitter Download",
   "The fastest and most reliable Twitter video downloader. Free to use, no registration required.": "Il downloader di video Twitter più veloce e affidabile. Gratuito, nessuna registrazione richiesta.",
   "Home": "Home",
   "About Us": "Chi Siamo",
@@ -11,7 +11,7 @@
   "Hot Tweets": "Tweet Popolari",
   "Load More": "Carica Altro",
   "Download Twitter video and all content": "Scarica video Twitter e tutti i contenuti",
-  "TwitterXDownload is an online web app to download twitter videos and all content to your computer directly. Twitter videos and Twitter GIFs are embedded in the tweet, so to download twitter videos online, you need to copy the tweet URL/link and paste it in the above text box. Our Twitter X download service will extract the twitter to mp4 link from the tweet and you can save twitter videos to your computer.": "TwitterXDownload è un'applicazione web online per scaricare video Twitter e tutti i contenuti direttamente sul tuo computer. I video e le GIF di Twitter sono incorporati nel tweet, quindi per scaricare i video Twitter online, devi copiare l'URL/link del tweet e incollarlo nella casella di testo sopra. Il nostro servizio di download Twitter X estrarrà il link mp4 dal tweet e potrai salvare i video Twitter sul tuo computer.",
+  "TwitterXDownload is an online web app to download twitter videos and all content to your computer directly. Twitter videos and Twitter GIFs are embedded in the tweet, so to download twitter videos online, you need to copy the tweet URL/link and paste it in the above text box. Our Twitter X download service will extract the twitter to mp4 link from the tweet and you can save twitter videos to your computer.": "Twitter Download è un'applicazione web online per scaricare video Twitter e tutti i contenuti direttamente sul tuo computer. I video e le GIF di Twitter sono incorporati nel tweet, quindi per scaricare i video Twitter online, devi copiare l'URL/link del tweet e incollarlo nella casella di testo sopra. Il nostro servizio di download Twitter X estrarrà il link mp4 dal tweet e potrai salvare i video Twitter sul tuo computer.",
   "All the videos and images are loaded directly from twitter CDN.": "Tutti i video e le immagini sono caricati direttamente dal CDN di Twitter.",
   "Frequently Asked Questions": "Domande Frequenti",
   "Submit": "Invia",
@@ -85,5 +85,17 @@
   "Post At": "Pubblicato il",
   "Import API keys": "Importa chiavi API",
   "Export API keys": "Esporta chiavi API",
-  "Invalid API keys": "Chiavi API non valide"
+  "Invalid API keys": "Chiavi API non valide",
+  "Invalid admin password": "Password amministratore non valida",
+  "Tweet shown successfully": "Tweet mostrato con successo",
+  "This tweet will be shown on homepage": "Questo tweet sarà mostrato sulla home",
+  "Tweet hidden successfully": "Tweet nascosto con successo",
+  "This tweet will be hidden on homepage": "Questo tweet sarà nascosto sulla home",
+  "Tweet deleted successfully": "Tweet eliminato con successo",   
+  "This tweet will be deleted from database": "Questo tweet sarà eliminato dal database",
+  "Search results may contain adult content. You must be at least 18 years old to continue.": "I risultati della ricerca potrebbero contenere contenuti per adulti. Devi avere almeno 18 anni per continuare.",
+  "Birth date": "Data di nascita",
+  "View All": "Visualizza Tutto",
+  "Download All": "Scarica Tutto",
+  "Goto Article": "Vai all'Articolo"
 } 

@@ -1,5 +1,5 @@
 {
-  "TwitterXDownload": "TwitterXDownload",
+  "TwitterXDownload": "Twitter Download",
   "The fastest and most reliable Twitter video downloader. Free to use, no registration required.": "最速で信頼性の高いTwitter動画ダウンローダー。無料で利用可能、登録不要。",
   "Home": "ホーム",
   "About Us": "会社概要",
@@ -11,7 +11,7 @@
   "Hot Tweets": "人気のツイート",
   "Load More": "もっと見る",
   "Download Twitter video and all content": "Twitter動画とすべてのコンテンツをダウンロード",
-  "TwitterXDownload is an online web app to download twitter videos and all content to your computer directly. Twitter videos and Twitter GIFs are embedded in the tweet, so to download twitter videos online, you need to copy the tweet URL/link and paste it in the above text box. Our Twitter X download service will extract the twitter to mp4 link from the tweet and you can save twitter videos to your computer.": "TwitterXDownloadは、Twitter動画とすべてのコンテンツを直接コンピューターにダウンロードできるオンラインウェブアプリです。Twitter動画やGIFはツイートに埋め込まれているため、オンラインでダウンロードするにはツイートのURL/リンクをコピーして上のテキストボックスに貼り付ける必要があります。当サービスがツイートからmp4リンクを抽出し、動画を保存できます。",
+  "TwitterXDownload is an online web app to download twitter videos and all content to your computer directly. Twitter videos and Twitter GIFs are embedded in the tweet, so to download twitter videos online, you need to copy the tweet URL/link and paste it in the above text box. Our Twitter X download service will extract the twitter to mp4 link from the tweet and you can save twitter videos to your computer.": "Twitter Downloadは、Twitter動画とすべてのコンテンツを直接コンピューターにダウンロードできるオンラインウェブアプリです。Twitter動画やGIFはツイートに埋め込まれているため、オンラインでダウンロードするにはツイートのURL/リンクをコピーして上のテキストボックスに貼り付ける必要があります。当サービスがツイートからmp4リンクを抽出し、動画を保存できます。",
   "All the videos and images are loaded directly from twitter CDN.": "すべての動画と画像はTwitter CDNから直接読み込まれます。",
   "Frequently Asked Questions": "よくある質問",
   "Submit": "送信",
@@ -85,5 +85,17 @@
   "Post At": "投稿日時",
   "Import API keys": "APIキーをインポート",
   "Export API keys": "APIキーをエクスポート",
-  "Invalid API keys": "無効なAPIキー"
+  "Invalid API keys": "無効なAPIキー",
+  "Invalid admin password": "無効な管理者パスワード",
+  "Tweet shown successfully": "ツイートの表示に成功しました",
+  "This tweet will be shown on homepage": "このツイートはホームページに表示されます",
+  "Tweet hidden successfully": "ツイートの非表示に成功しました", 
+  "This tweet will be hidden on homepage": "このツイートはホームページから非表示になります",
+  "Tweet deleted successfully": "ツイートの削除に成功しました", 
+  "This tweet will be deleted from database": "このツイートはデータベースから削除されます",
+  "Search results may contain adult content. You must be at least 18 years old to continue.": "検索結果には成人向けコンテンツが含まれる可能性があります。続行するには18歳以上である必要があります。",
+  "Birth date": "生年月日",
+  "View All": "すべて表示",
+  "Download All": "すべてダウンロード",
+  "Goto Article": "記事へ移動"
 } 

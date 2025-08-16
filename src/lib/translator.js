@@ -24,6 +24,10 @@ async function translate(text, targetLang){
                     "sec-fetch-mode": "cors",
                     "sec-fetch-site": "cross-site"
                 },
+                // Set the referrer to the new domain to avoid mismatches when
+                // requesting the translation service.  Leaving this pointing at
+                // the old domain can cause requests to be rejected by the
+                // translation API.
                 referrer: "https://x.neutemu.com/",
                 referrerPolicy: "strict-origin-when-cross-origin",
                 body: null,

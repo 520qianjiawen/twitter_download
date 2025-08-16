@@ -11,6 +11,7 @@ import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher"; // 新的客户端组件
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import FriendsLink from "./FriendsLink";
+import { RiSearchLine } from "@remixicon/react";
 
 export default function MyNavbar({ locale = 'en' }) {
   const t = function(key){
@@ -22,7 +23,8 @@ export default function MyNavbar({ locale = 'en' }) {
     }}>
       <NavbarBrand>
         <Link href="/" className="text-foreground">
-          <Image src="/images/logo.png" alt="TwitterDownload" width={32} height={32} />
+          {/* Use the new brand name for the logo alt text */}
+          <Image src="/images/logo.png" alt="Twitter Download" width={32} height={32} />
           <p className="font-bold text-inherit mx-3 text-2xl">
             {t('TwitterXDownload')}
           </p>
@@ -40,7 +42,7 @@ export default function MyNavbar({ locale = 'en' }) {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="https://news.525.hk" target="_blank">
+          <Link color="foreground" href="https://github.com/ezshine/twitterxdownload" target="_blank">
           {t('Self Hosted')}
           </Link>
         </NavbarItem>
@@ -48,12 +50,19 @@ export default function MyNavbar({ locale = 'en' }) {
           <FriendsLink locale={locale} />
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden md:flex">
+      <NavbarContent justify="end" className="hidden md:flex">
+        <NavbarItem>
           <LanguageSwitcher locale={locale} />
         </NavbarItem>
         <NavbarItem>
           <ThemeSwitcher />
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end" className="md:hidden">
+        <NavbarItem>
+          <Link href="/tweets" className="text-foreground">
+            <RiSearchLine />
+          </Link>
         </NavbarItem>
       </NavbarContent>
     </Navbar>
