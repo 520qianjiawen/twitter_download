@@ -1,7 +1,7 @@
 'use client';
 import { Card, CardHeader, CardBody, CardFooter, Avatar,Chip,Button,Dropdown, DropdownTrigger, DropdownMenu, DropdownItem,Input,ToastProvider,addToast } from "@heroui/react";
 import { useState } from "react";
-import { RiCloseCircleFill,RiArrowDropDownLine,RiMoreFill } from "@remixicon/react"
+import { RiCloseCircleFill,RiArrowDropDownLine,RiMoreFill,RiDownloadLine } from "@remixicon/react"
 import { getTranslation } from "@/lib/i18n";
 import ConfirmModal from "./ConfirmModal";
 import Link from "next/link";
@@ -16,14 +16,31 @@ export default function TweetCard({ tweet,videoPreview=true,enableEdit = false,l
     const [savedPwd, setSavedPwd] = useState(localStorage.getItem('adminpwd') || '');
 
     const getMediaDom = (mediaUrl) => {
+        // Wrap each media element in a container that includes a download button.
+        const render = (child) => (
+            <div className="relative w-full h-full">
+                {/* individual download button; stop propagation so clicking doesn't trigger parent links */}
+                <a
+                    href={mediaUrl}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="absolute z-20 bottom-2 right-2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1"
+                >
+                    <RiDownloadLine className="w-4 h-4" />
+                </a>
+                {child}
+            </div>
+        );
         if (mediaUrl.includes('.mp4') || mediaUrl.startsWith('data:video/mp4')) {
-            return (
+            return render(
                 <video preload={videoPreview ? 'auto' : 'none'} controls src={mediaUrl} alt="Tweet media" className="w-full h-full rounded-lg object-cover" />
-            )
+            );
         }
-        return (
+        return render(
             <img src={mediaUrl} alt="Tweet media" className="w-full h-full rounded-lg object-cover" />
-         )
+        );
     }
 
     const handleDeleteMedia = (index) => {

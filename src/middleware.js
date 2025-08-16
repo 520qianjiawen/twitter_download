@@ -18,7 +18,10 @@ export function middleware(request) {
 
   // 检查是否有 referer 头，如果有，尝试从中提取语言
   const referer = request.headers.get('referer');
-  let preferredLocale = 'en';
+  // Default preferred locale. Set to Chinese Simplified (zh-CN) so that
+  // visitors without an explicit locale in the URL or referer will land
+  // on the Simplified Chinese version of the site.
+  let preferredLocale = 'zh-CN';
 
   if (referer) {
     const refererUrl = new URL(referer);
@@ -36,11 +39,12 @@ export function middleware(request) {
   }
 
   // 如果从 referer 中没有找到语言，再使用 Accept-Language
-  if (preferredLocale === 'en' && !referer) {
+  // Only override the default when a supported Accept‑Language is found.
+  if (!referer) {
     const acceptLanguage = request.headers.get('accept-language') || '';
     console.log('Accept-Language:', acceptLanguage);
 
-    preferredLocale = acceptLanguage
+    const acceptLocale = acceptLanguage
       .split(',')
       .map((lang) => {
         const cleanLang = lang.split(';')[0].trim();
@@ -49,7 +53,10 @@ export function middleware(request) {
         }
         return cleanLang;
       })
-      .find((lang) => Object.keys(locales).includes(lang)) || 'en';
+      .find((lang) => Object.keys(locales).includes(lang));
+    if (acceptLocale) {
+      preferredLocale = acceptLocale;
+    }
   }
 
   console.log('Final preferred locale:', preferredLocale);
