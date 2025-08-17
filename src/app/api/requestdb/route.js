@@ -274,6 +274,25 @@ export async function GET(request) {
         ]);
 
         allData = result;
+
+        // Fallback: if no search results are found locally and the application is
+        // not configured to use the shared database, delegate the same search
+        // query to the shared API.  Without this fallback, a search against an
+        // empty local database will return an empty result set even though the
+        // shared database may contain matching tweets.  We leverage the
+        // existing query parameters (searchParams) to build the remote
+        // request.  If the fallback fetch fails, the function will simply
+        // continue and return the empty local result.
+        if ((!allData || allData.length === 0) && process.env.NEXT_PUBLIC_USE_SHARED_DB !== '1') {
+          try {
+            const queryString = searchParams.toString();
+            const response = await fetch(`https://api.twitterxdownload.com/api/requestdb?${queryString}`);
+            const data = await response.json();
+            return Response.json({ message: 'fallback to shared database', ...data });
+          } catch (err) {
+            // ignore fallback error
+          }
+        }
     }
     
     return Response.json({ 

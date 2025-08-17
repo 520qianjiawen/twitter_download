@@ -74,7 +74,12 @@ export default function Tweets({ params: { locale } }) {
         if(loading) return;
         setLoading(true);
 
-        const response = await fetch(`/api/requestdb?action=search&name=${name}&screen_name=${screen_name}&text=${text}&content_type=${content_type}&date_range=${date_range}&cursor=${cursor}`);
+        // 对搜索参数进行 URL 编码，避免中文或特殊字符导致请求失败
+        const encodedName = encodeURIComponent(name || '');
+        const encodedScreenName = encodeURIComponent(screen_name || '');
+        const encodedText = encodeURIComponent(text || '');
+        const encodedCursor = encodeURIComponent(cursor ?? '');
+        const response = await fetch(`/api/requestdb?action=search&name=${encodedName}&screen_name=${encodedScreenName}&text=${encodedText}&content_type=${content_type}&date_range=${date_range}&cursor=${encodedCursor}`);
         const data = await response.json();
 
         if(data.data.length > 0) setLastTweetId(data.data[data.data.length - 1]._id);
@@ -106,7 +111,15 @@ export default function Tweets({ params: { locale } }) {
         });
         setLoading(false);
 
-        if(!cursor) router.replace(`/tweets?${name ? `name=${name}&` : ''}${screen_name ? `screen_name=${screen_name}&` : ''}${text ? `text=${text}&` : ''}`);
+        if(!cursor) {
+            // 更新地址栏时也使用编码后的参数，保证中文等字符正确出现在 URL 中
+            const q = [];
+            if(name) q.push(`name=${encodeURIComponent(name)}`);
+            if(screen_name) q.push(`screen_name=${encodeURIComponent(screen_name)}`);
+            if(text) q.push(`text=${encodeURIComponent(text)}`);
+            const queryString = q.length > 0 ? `${q.join('&')}` : '';
+            router.replace(`/tweets${queryString ? `?${queryString}` : ''}`);
+        }
     }
 
     const handleClear = () => {

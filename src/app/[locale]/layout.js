@@ -21,47 +21,36 @@ import MyFooter from '../components/ui/MyFooter';
 // that search engines and social platforms link to the correct domain.
 export const metadata = {
   title: {
-    // Default fallback title used when a page does not specify its own
-    // title.  It contains the new brand name and describes the core
-    // functionality of the site.
-    default: 'Twitter Download - Free & Fast Twitter Video Downloader',
-    // When a page supplies its own title string it will replace the `%s`
-    // placeholder, with the brand appended after the separator.
-    template: '%s | Twitter Download'
+    // 默认的标题为中文，突出品牌“Twitter视频下载”和其核心功能。若页面自定义标题，将替换 `%s` 占位符，品牌名称置于后缀。
+    default: 'Twitter视频下载 - 免费快速的Twitter视频下载器',
+    template: '%s | Twitter视频下载'
   },
-  // A concise meta description to help search engines and social sites
-  // understand what the site does.  Updated to include GIFs and media
-  // downloads and emphasise the free, registration‑free nature of the service.
-  description: 'Download Twitter videos, GIFs and media quickly and easily with our free Twitter video downloader. No registration required – save high‑quality media from Twitter in seconds.',
-  keywords: 'twitter downloader, twitter video download, twitter gif downloader, x.com downloader',
-  // The authors field is updated to reflect the new brand name.
-  authors: [{ name: 'Twitter Download' }],
+  // 中文版的描述，强调这是一个免费、快速且易于使用的 Twitter 视频下载工具，无需注册即可下载 Twitter 视频及媒体内容。
+  description: '免费的Twitter视频下载器 – 快速可靠且易于使用，无需注册即可快速下载Twitter视频和媒体内容。',
+  // 关键词也用中文表达，兼顾常用英文关键词便于搜索引擎识别。
+  keywords: 'twitter下载器, twitter视频下载, twitter gif 下载, x.com 下载, twitter downloader',
+  // 作者名称使用中文品牌名。
+  authors: [{ name: 'Twitter视频下载' }],
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   alternates: {
     // Point canonical URLs at the new domain.
     canonical: 'https://x.neutemu.com/',
   },
   openGraph: {
-    title: 'Twitter Download - Free & Fast Twitter Video Downloader',
-    description: 'Download Twitter videos, GIFs and media quickly and easily with our free Twitter downloader. No registration required.',
+    title: 'Twitter视频下载 - 免费快速的Twitter视频下载器',
+    description: '免费的Twitter视频下载器 – 快速可靠且易于使用，无需注册即可快速下载Twitter视频和媒体内容。',
     type: 'website',
-    // Use the new domain for OpenGraph URLs.
     url: 'https://x.neutemu.com',
-    // Update the siteName to the new brand.
-    siteName: 'Twitter Download',
-    // Update image URL to point at the new domain.  The actual image file
-    // resides in the `public/images` folder and will be served from the
-    // configured domain.
+    siteName: 'Twitter视频下载',
     images: [{
       url: 'https://x.neutemu.com/images/og.png'
     }]
   },
   twitter: {
     card: 'summary_large_image',
-    // Retain the existing handle for the Twitter account; it may not change.
     site: '@twitterxdownload',
-    title: 'Twitter Download - Free & Fast Twitter Video Downloader',
-    description: 'Download Twitter videos, GIFs and media quickly and easily with our free Twitter downloader. No registration required.',
+    title: 'Twitter视频下载 - 免费快速的Twitter视频下载器',
+    description: '免费的Twitter视频下载器 – 快速可靠且易于使用，无需注册即可快速下载Twitter视频和媒体内容。',
     images: ['https://x.neutemu.com/images/og.png']
   },
   icons: {
